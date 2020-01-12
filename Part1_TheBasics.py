@@ -763,6 +763,151 @@ favorite_languanges = {
 language = favorite_languanges['sarah'].title()
 print(f'Sarah"s favorite language is {language}.')
 
+# looping through all key value pairs (looping a dictionary)
+user_0 = {
+    'username': 'efermi', 
+    'first': 'enrico',
+    'last': 'fermi'
+    }
+
+print(user_0['username']) # single piece of information
+
+# list comprehension
+for key, value in user_0.items(): # all info about user
+    print(f"\nKey: {key}")
+    print(f"Value: {value}")
+
+# list comprehension for looping
+favorite_languanges = {
+        'jen': 'python', 
+        'sarah':'c', 
+        'edward':'ruby', 
+        'phil':'python'
+        }
+#    key, value        dictionary         method
+for name, language in favorite_languanges.items():
+    print(f"{name.title()}'s favorite language is {language.title()}.")
+
+# looping through just the keys
+for name in favorite_languanges.keys():
+    print(name.title())
+
+# lets pick out certain friends and give them a different message
+
+friends = ['phil', 'sarah']
+for name in favorite_languanges.keys():
+    print(f" Hi {name.title()}")
+    
+    if name in friends:
+        language = favorite_languanges[name].title() # creates list of languages for friends
+        print(f"\t{name.title()}, I see you love {language}!")
+
+# lets see if a certain person took the poll
+        
+if 'ryan' not in favorite_languanges.keys():
+    print("Ryan, please take our poll!")
+
+# sorting the keys in the dictionary
+
+for name in sorted(favorite_languanges.keys()):
+    print(f"{name.title()}, thank you for taking the poll.")
+
+# what about just the values of the dictionary
+    # this can be repetitive and clutters the list
+print("The following languages have been mentioned:")
+for language in favorite_languanges.values():
+    print(language.title())
+
+# just values without the repetition of a dictionary
+print("The following languages have been mentioned:")
+
+#               set doesnt allow for repetition
+for language in set( favorite_languanges.values()):
+    print(language.title())
+
+# nesting
+    # an alien_0 dictionary contains only info about that alien, not many
+    
+# how to do this
+# first create dicts for each alien
+    
+alien_0 = {'color':'green', 'points': 5}
+alien_1 = {'color':'yellow', 'points': 10}
+alien_2 = {'color':'red', 'points': 15}
+
+# now store them in a list 
+
+aliens = [alien_0, alien_1, alien_2]
+
+for alien in aliens:
+    print(alien)
+
+# more realistic example would have more than 3 aliens with code that AUTOMATICALLY
+    # creates these aliens. We will use range() to create 30 aliens
+    
+# make an empty list to store aliens.
+aliens = []
+
+# make 30 green aliens
+for alien_number in range(30): # how many aliens we want
+    new_alien = {'color': 'green', 'points': 5, 'speed': 'slow'}
+    aliens.append(new_alien)
+
+# show first 5 aliens.
+for alien in aliens[:5]:
+    print(alien)
+print("...")
+
+# show the length of aliens created
+print(f"There are {len(aliens)} in this list")
+
+# now that we have 30 different objects in this list, even though they are the same
+    # lets change the first 3 aliens to faster ones
+
+for alien in aliens[:3]:
+    if alien['color'] == 'green':
+        alien['color'] = 'yellow'
+        alien['points'] = 10
+        alien['speed'] = 'medium'
+
+# show first 5 aliens.
+for alien in aliens[:5]:
+    print(alien)
+print("...")
+
+# lets include turning the yellow into red faster ones
+
+for alien in aliens[:3]:
+    if alien['color'] == 'green':
+        alien['color'] = 'yellow'
+        alien['points'] = 10
+        alien['speed'] = 'medium'
+    elif alien['color'] == 'yellow':
+        alien['color'] = 'red'
+        alien['points'] = 15
+        alien['speed'] = 'fast'
+
+# show first 5 aliens.
+for alien in aliens[:5]:
+    print(alien)
+print("...")
+
+# storing a list inside a dictionary
+
+pizza = {
+    'crust': 'thick',
+    'toppings': ['mushroom', 'extra cheese'],
+    }
+
+# summarize the order
+print(f"You ordered a {pizza['crust']}-crust pizza "
+        "with the following toppings:")
+for topping in pizza['toppings']:
+    print("\t" + topping)
+
+
+
+
 
 
 
