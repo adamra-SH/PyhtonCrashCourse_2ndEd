@@ -14,7 +14,7 @@ Created on Tue Dec  3 10:17:01 2019
 Open the anaconda terminal and type [python] to get to the interpreter >>>
 We have python 3.6.4"""
 
-Terminal commands:
+#T_ermin_al commands:
     python = enter the interpreter
     ctrl z = exit # go back to command prompt
     exit() = exit
