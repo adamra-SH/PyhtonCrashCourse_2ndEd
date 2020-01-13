@@ -956,4 +956,116 @@ for username, user_info in users.items():
     print(f"\tFull name: {full_name.title()}")
     print(f"\tLocation: {location.title()}")
     
+                                                                    # Chapter 7
+# using the input() function
+# while loops to keep programs running as long as certain conditions remain true
+
+message = input("Tell me what you want me to repeat back to you? ")
+print(message)
+
+# be very clear about what you want from a prompt
+    # users will need to know exactly what to input
+
+name = input("Please enter your name: ")# the space after the colon makes it clear
+print(f"\nHello, {name}!")
+
+# writing a prompt thats longer than one line
+prompt = "If you tell us who you are, we can personalize the message you see."
+prompt += "\nWhat is your first name? "
+
+name = input(prompt)
+print(f"\nHello, {name}!")
+
+# what about integers? well lets use int()
+
+age = input("How old are you? ") # input automatically creates a string
+age # string
+
+age >=18 # error because its a string comparing to an int
+
+# turn their input into an int
+
+age = int(age)
+age >= 18 # returns True because it is!
+
+# lets ride a roller coaster!
+
+height = input("How tall are you? ")
+height = int(height)
+
+if height >=48:
+    print("\nYou're tall enough to ride this ride.")
+else:
+    no_message = "\nI am sorry, but you're not tall enough to ride this ride,"
+    no_message += " come back when you're older!"
+    print(no_message)
+
+# using the modulo operator (%)
+    # doesnt tell you how many times it was divided by, but tells you the remainder
+    # determine if a number is odd or even
+number = input("Enter a number, and I'll tell you if it's even or odd: ")
+number = int(number)
+
+if number % 2 == 0:
+    print(f"The number {number} is even.")
+else:
+    print(f"The number {number} is odd.")
+
+                        ##### Try it Yourself #####
+# rental car company
+
+car_requested = input("What kind of car would you like?")
+car_requested = car_requested.lower()
+cars_available = ['subaru', 'toyota', 'gmc', 'chevy']
+upper_list = ['bmw', 'gmc']
+
+if car_requested in cars_available:
+    if car_requested in upper_list:
+        car_requested = car_requested.upper()
+    print(f"You have great taste and we can get the {car_requested.title()} ready!")
+else:
+    if car_requested in upper_list:
+        car_requested = car_requested.upper()
+    print(f"Really unfortunate, but we do not have the {car_requested.title()} available right now.")
+
+# multiple of ten test
+
+number = input("Tell me a number, and I'll tell you if its a multiple of 10: ")
+number = int(number)
+
+if number % 10 == 0:
+    print(f"The number {number} is a multiple of 10.")
+else:
+    print(f"The number {number} is not a muliple of 10, boo!")
+
+# is a number able to be multiplied by a certain number
+number = input("Tell me a number to divide: ")
+number = int(number)
+m_number = input("Tell me the number to divide it by: ")
+m_number = int(m_number)
+
+if number % m_number == 0:
+    print(f"The number {number} is a multiple of {m_number}.")
+else:
+    print(f"The number {number} is not a muliple of {m_number}, boo!")
+
+                        ##### End #####
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
